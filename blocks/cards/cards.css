@@ -1,3 +1,4 @@
+/* Updated CSS code */
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -24,4 +25,143 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.cards.cards33 {
+  background: #f8f9f9;
+  padding: 36px 0;
+}
+
+.cards.cards33 > ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards.cards33 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #fff;
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px 0 rgb(30 32 37 / 8%);
+  overflow: hidden;
+  min-height: 210px;
+  transition: box-shadow 0.18s;
+}
+
+.cards.cards33 > ul > li:hover {
+  box-shadow: 0 8px 28px 0 rgb(30 32 37 / 13%);
+}
+
+.cards.cards33 .cards-card-image {
+  flex: 0 0 32%;
+  max-width: 32%;
+  min-width: 120px;
+  height: auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  background: #ececec;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Remove aspect-ratio on desktop for full vertical stretch */
+.cards.cards33 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+
+/* General Paragraph Style (moved above p:first-child for specificity order) */
+.cards.cards33 .cards-card-body p {
+  font-size: 1.01rem;
+  color: #606060;
+  margin: 0 0 10px;
+  font-weight: 400;
+  line-height: 1.44;
+}
+
+/* Card Body */
+.cards.cards33 .cards-card-body p:first-child {
+  font-size: 0.95rem;
+  color: #a4a4a4;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.065em;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.cards.cards33 .cards-card-body p.button-container {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+/* Heading */
+.cards.cards33 .cards-card-body h3 {
+  font-family: var(--heading-font-family);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #232323;
+  margin: 0 0 14px;
+  letter-spacing: 0.01em;
+  line-height: 1.19;
+  text-transform: none;
+}
+
+/* "Read" as text link */
+.cards.cards33 .cards-card-body .button {
+  background: none;
+  color: var(--link-color);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  font-size: 1.01rem;
+  font-weight: 500;
+  text-decoration: underline;
+  display: inline;
+  border: none;
+  min-width: 0;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Responsive: stack to 1 column on small screens, image on top */
+@media (width <= 900px) {
+  .cards.cards33 > ul {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .cards.cards33 > ul > li {
+    flex-direction: column;
+    min-height: unset;
+    border-radius: 18px;
+  }
+
+  .cards.cards33 .cards-card-image,
+  .cards.cards33 .cards-card-image img {
+    max-width: 100%;
+    width: 100%;
+    min-width: unset;
+    border-radius: 18px 18px 0 0;
+    height: 160px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .cards.cards33 .cards-card-body {
+    border-radius: 0 0 18px 18px;
+    padding: 16px 14px;
+  }
 }
